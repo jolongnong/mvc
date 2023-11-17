@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>mvc</display-name>  <!-- 파일 이름을 정의 -->
+  
+  <servlet>
+    <servlet-name>mvc</servlet-name>  <!-- 구성 -->
+    <servlet-class>test.mvc.controller.HelloController</servlet-class>  <!-- 메핑에서 요청이오면 동작시작 -->
+    
+    <!-- 이건 여길 다 적고 생성 -->
+    <init-param>
+    	<param-name>commandURI</param-name>  <!-- 초기화 --> <!-- 인잇 메서드에 보내는 파라미터 -->
+    	<param-value>J:\Dev\mvc\src\main\webapp\WEB-INF\properties\commandURI.properties</param-value>  <!-- 프로퍼티스 파일 경로 -->
+    </init-param>  
+  </servlet>
+  
+  
+  <servlet-mapping>  <!-- mvc라는걸 쓸거다 -->
+    <servlet-name>mvc</servlet-name> 
+    <url-pattern>*.do</url-pattern> <!-- 클라이언트가 "*.do"로 끝나는 URL을 호출할 때 "mvc"라는 서블릿이 동작 -->
+  </servlet-mapping>
+  
+  
+  
+  
+  <!-- 이건 맴버 -->
+  
+  <servlet>
+	  <servlet-name>user</servlet-name> <!-- 구성 -->
+	  <servlet-class>member.mvc.controller.MemberController</servlet-class> <!-- 여기파일을 쓸거다 사용 -->
+	  
+	  <init-param>
+	    <param-name>memberURI</param-name>
+	    <param-value>J:\Dev\mvc\src\main\webapp\WEB-INF\properties\memberURI.properties</param-value>
+	  </init-param>
+  </servlet>
+  
+   <servlet-mapping>  <!-- mvc라는걸 쓸거다 -->
+    <servlet-name>user</servlet-name> 
+    <url-pattern>*.me</url-pattern> <!-- 클라이언트가 "*.do"로 끝나는 URL을 호출할 때 "mvc"라는 서블릿이 동작 -->
+  </servlet-mapping>
+  
+  <!-- 이건 보드 -->
+  
+  
+   <servlet>
+	  <servlet-name>board</servlet-name> <!-- 구성 -->
+	  <servlet-class>board.mvc.controller.BoardController</servlet-class> <!-- 여기파일을 쓸거다 사용 -->
+	  
+	  <init-param>
+	    <param-name>boardURI</param-name>
+	    <param-value>J:\Dev\mvc\src\main\webapp\WEB-INF\properties\boardURI.properties</param-value>
+	  </init-param>
+  </servlet>
+  
+   <servlet-mapping>  <!-- mvc라는걸 쓸거다 -->
+    <servlet-name>board</servlet-name> 
+    <url-pattern>*.bo</url-pattern> <!-- 클라이언트가 "*.do"로 끝나는 URL을 호출할 때 "mvc"라는 서블릿이 동작 -->
+  </servlet-mapping>
+  
+  
+</web-app>
+
+
+
